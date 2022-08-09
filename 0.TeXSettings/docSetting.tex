@@ -1,0 +1,111 @@
+%%
+\documentclass[12pt, multi, tikz]{article}
+%%
+
+%% Basic Setting -----------------------------------------------------------------------
+\usepackage[english]{babel}
+\usepackage{amsmath}		 		% math pack
+\usepackage{esint}					% Integral Symbol
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{empheq}
+
+\usepackage{eufrak}
+\usepackage{amssymb}
+
+
+%\usepackage{dutchcal}
+
+%\usepackage{pzccal}
+%\DeclareFontFamily{OT1}{pzc}{}
+%\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+%\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\usepackage{cancel}
+\usepackage{url}					   % add urls
+\usepackage[utf8x]{inputenc}	 % latex input utf8x (various characterers)
+\usepackage{natbib}				     % reference package
+\usepackage{parskip}				 % space between paragraph
+\usepackage{fancyhdr}				% page headers and footers
+\usepackage{vmargin}				% set various marfines for header/footer and page dimension
+\usepackage{fixltx2e}				  % latex debugging package
+%% ----------------------------------------------------------------------- Basic Setting
+
+%% Table Setting -----------------------------------------------------------------------
+\usepackage{array}						% array pack
+\usepackage{caption}  				% caption Setup 
+\usepackage{chngcntr}				% caption set to follow chapter number 
+\usepackage{hhline}					% Seperate line properties (tabular)
+\usepackage{multirow}				% multi row package
+\usepackage{booktabs,caption}	% caption
+\usepackage[flushleft]{threeparttable}	 % package for tabular notes
+
+\usepackage{makecell}
+
+%%... Table Numbering and Format
+\captionsetup[table]{labelfont=bf,  labelsep=period}	% table caption format
+\captionsetup[table]{skip=5pt}		% space between caption and table
+\counterwithin{table}{section}			% table caption (Chapter number)
+
+\usepackage{graphicx}				% graph pack
+\usepackage{subfig}					% sub figure
+\usepackage{float}						% sub figure name
+
+%%... Figure format
+\captionsetup[figure]{labelfont=bf,  labelsep=period}	% table caption format
+\counterwithin{figure}{section}	% figure caption (Chapter number)
+%% ---------------------------------------------------------------------- Figure Setting
+
+%% Equation Setting ------------------------------------------------------------------
+\counterwithin{equation}{section}		% equation caption (Chapter number)
+
+%\setlength{\abovedisplayskip}{1em}
+%\setlength{\belowdisplayskip}{1em}
+
+\usepackage[toc,page]{appendix}
+
+%% Author and ---
+\usepackage{authblk}
+
+%% Auxillary -----------------------------------------------------------------------------
+%\usepackage{subcaption}			% sub-caption 
+\usepackage{bm}
+%% ----------------------------------------------------------------------------- Auxillary
+
+%% Color box for math
+\usepackage[most]{tcolorbox}
+
+\tcbset{colback=yellow!10!white, colframe=red!50!black, 
+	highlight math style= {enhanced, %<-- needed for the ’remember’ options
+		colframe=red,colback=red!10!white,boxsep=0pt}
+}
+
+\usepackage[draft]{todonotes}   % notes showed
+
+%% Page Setting ------------------------------------------------------------------------
+\setmarginsrb{2 cm}{1.5 cm}{2 cm}{1.5 cm}{0.5 cm}{1 cm}{0.5 cm}{1 cm}
+\pagestyle{fancy}
+\fancyhead[RE,LO]{\rightmark}
+\fancyhead[LE,LO]{}
+
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+%1 est la marge gauche
+%2 est la marge en haut
+%3 est la marge droite
+%4 est la marge en bas
+%5 fixe la hauteur de l’entête
+%6 fixe la distance entre l’entête et le texte
+%7 fixe la hauteur du pied de page
+%8 fixe la distance entre le texte et le pied de page
+
+\makeatletter
+\newcommand\stroke[1]{\mathpalette\stroke@aux{#1}}
+\def\stroke@aux#1#2{%
+	\ooalign{%
+		\hfil$#1-$\hfil\cr
+		\hfil$#1#2$\hfil\cr
+	}%
+}
+\makeatother

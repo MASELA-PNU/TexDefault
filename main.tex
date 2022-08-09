@@ -1,0 +1,37 @@
+\input{0.TeXSettings/docSetting.tex}
+\input{0.TeXSettings/plotTreeProgramLanguage.tex}
+\input{0.TeXSettings/userShortCut.tex}
+
+\graphicspath{{images/}}				% image path
+
+%%
+
+\title{Latex Example}
+\author[]{Young-Myung Choi}
+\affil[]{Dept. Naval Architecture and Ocean Engineering \\
+	     Pusan National University, Busan, Korea }
+\date{09 August 2022}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\begin{document}
+	
+	\include{titlePage}
+	
+	\section{Section 1}
+	
+	\input{section1/subsection1}
+	
+	\input{section1/MathExpression}
+	
+	\input{section1/Text}	
+	
+	\clearpage	
+	\bibliographystyle{abbrv}
+	\bibliography{references}
+	
+\end{document}
